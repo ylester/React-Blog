@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Python Flask Bucket List App</title>
+   
+    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="http://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet">
+    <link href="/static/css/signup.css" rel="stylesheet">
+    <script src="/static/js/jquery-3.1.1.js"></script>
+    <script src="/static/js/signUp.js"></script>
+   
+  </head>
+
+  <body>
+
+    <div class="container">
+      <div class="header">
+        <nav>
+          <ul class="nav nav-pills pull-left">
+            <button role="presentation" ><a href="/">Home</a></button>
+            <button role="presentation" ><a href="/showSignin">Login</a></button>
+            <button role="presentation" ><a href="/showSignup">Sign Up</a></button>
+            <button role="presentation" ><a href="/logout">Logout</a></button>
+          </ul>
+        </nav>
+        <img src="https://d1q6f0aelx0por.cloudfront.net/product-logos/6bd224a8-e827-4593-b5b4-483338e9999e-python.png"/ >
+      </div>
+
+      <div class="jumbotron">
+        <h1>Blog App</h1>
+        {% block body %}
+        {% if session['logged_in'] %}
+        <p>You're logged in already!</p>
+        <a href="/homepage">Go to Homepage</a>
+        {% else %}
+        <form class="form-signin" action="/showSignin" method="post">
+        <label for="inputEmail" class="sr-only">Email address</label>
+        <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" name="pwd" id="inputPassword" class="form-control" placeholder="Password" required>
+        
+        <button id="btnSignIn" class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+      </form>
+      {% endif %}
+      {% endblock %}
+      </div>
+
+      <footer class="footer">
+        <p>©Yesha Blog 2017</p>
+      </footer>
+
+    </div>
+  </body>
+</html>
