@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Python Flask Blog App</title>    
+
+    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet"> 
+    <link href="http://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet">
+    <link href="/static/css/signup.css" rel="stylesheet">    
+  </head>
+ 
+  <body>
+ 
+    <div class="container">
+      <div class="header">
+        <nav>
+          <ul class="nav nav-pills pull-right">
+            <button role="presentation" ><a href="/">Home</a></button>
+            <button role="presentation" ><a href="/showSignin">Login</a></button>
+            <button role="presentation" ><a href="/showSignup">Sign Up</a></button>
+            <button role="presentation" ><a href="/logout">Logout</a></button>
+          </ul>
+        </nav>
+        <img src="https://d1q6f0aelx0por.cloudfront.net/product-logos/6bd224a8-e827-4593-b5b4-483338e9999e-python.png"/>
+      </div>
+
+      <div class="jumbotron">
+        <h1>Blog App</h1>
+       <!-- <form class="form-signin"> -->
+
+        <form method="POST" action="/showSignUp">
+
+	      <label for="inputName" class="sr-only">Name</label>
+        <input type="text" name="name" id="inputName" class="form-control" placeholder="Name" required autofocus>
+        <label for="inputEmail" class="sr-only">Email address</label>
+        <input type="text" name="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="Password" name="pwd" id="inputPassword" class="form-control" placeholder="Password" required>
+         
+        <button id="btnSignUp" class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
+
+      </form>
+      </div>
+ 
+      <footer class="footer">
+        <p>2017</p>
+      </footer>
+ 
+    </div>
+  </body>
+</html>
