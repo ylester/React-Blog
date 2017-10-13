@@ -77,10 +77,6 @@ class Post(db.Model):
     def __repr__(self):
         return '<Post %r , %r>' % (self.title, self.body)
 
-# class LoginForm(Form):
-#     email = StringField('Email', validators=[DataRequired(), Email(), Length(min=6, max=40)])
-#     password = PasswordField('Password', validators=[DataRequired()])
-
 
 ####################################################################
 
